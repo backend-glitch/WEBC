@@ -1,0 +1,418 @@
+<!--part-1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sun Moon Toggle Switch</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #87CEEB; /* Day sky */
+      transition: background 0.5s ease;
+      font-family: sans-serif;
+    }
+
+    .switch {
+      width: 100px;
+      height: 50px;
+      background: #333;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.5s;
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      background: #FFD700;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      transition: all 0.5s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    /* When dark mode */
+    .switch.dark {
+      background: #222;
+    }
+
+    .switch.dark .circle {
+      left: 55px;
+      background: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+  <div class="switch" id="toggle">
+    <div class="circle">☀️</div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("toggle");
+    const circle = toggle.querySelector(".circle");
+    const body = document.body;
+
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("dark");
+
+      if (toggle.classList.contains("dark")) {
+        circle.textContent = "🌙";
+        body.style.background = "#111"; // Night sky
+      } else {
+        circle.textContent = "☀️";
+        body.style.background = "#87CEEB"; // Day sky
+      }
+    });
+  </script>
+</body>
+</html>
+-->
+
+<part-2
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Sun-Moon Toggle</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #87CEEB; /* Day sky */
+      transition: background 1s ease;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    .switch {
+      width: 110px;
+      height: 55px;
+      background: #333;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.5s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .circle {
+      width: 45px;
+      height: 45px;
+      background: #FFD700;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      transition: all 0.8s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
+    }
+
+    /* Sun rays effect */
+    .sun-rays {
+      position: absolute;
+      width: 65px;
+      height: 65px;
+      border: 2px solid rgba(255, 223, 0, 0.6);
+      border-radius: 50%;
+      animation: spin 5s linear infinite;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Stars for night mode */
+    .star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .switch.dark {
+      background: #111;
+    }
+
+    .switch.dark .circle {
+      left: 60px;
+      background: #f1f1f1;
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+
+    .switch.dark .sun-rays {
+      display: none;
+    }
+
+    .switch.dark .star {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="switch" id="toggle">
+    <div class="circle">
+      ☀️
+      <div class="sun-rays"></div>
+    </div>
+    <div class="star" style="top:10px; left:15px;"></div>
+    <div class="star" style="top:35px; left:80px;"></div>
+    <div class="star" style="top:5px; left:95px;"></div>
+    <div class="star" style="top:45px; left:30px;"></div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("toggle");
+    const circle = toggle.querySelector(".circle");
+    const sunRays = toggle.querySelector(".sun-rays");
+    const body = document.body;
+
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("dark");
+
+      if (toggle.classList.contains("dark")) {
+        circle.textContent = "🌙";
+        body.style.background = "#0b0c10"; // night
+      } else {
+        circle.textContent = "☀️";
+        body.style.background = "#87CEEB"; // day
+      }
+
+      // Re-add sun rays inside circle after switching
+      if (!toggle.classList.contains("dark")) {
+        circle.appendChild(sunRays);
+      }
+    });
+  </script>
+</body>
+</html>
+
+
+
+<!--part-3
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Sun-Moon Toggle</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #87CEEB; /* Day sky */
+      transition: background 1s ease;
+      font-family: sans-serif;
+      overflow: hidden;
+    }
+
+    .cloud {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.9;
+      animation: float 40s linear infinite;
+    }
+
+    /* Cloud shape pieces */
+    .cloud:before,
+    .cloud:after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .cloud.small {
+      width: 60px;
+      height: 35px;
+      top: 20%;
+      left: -100px;
+      animation-duration: 60s;
+    }
+    .cloud.small:before {
+      width: 30px;
+      height: 30px;
+      top: -15px;
+      left: 10px;
+    }
+    .cloud.small:after {
+      width: 25px;
+      height: 25px;
+      top: -10px;
+      left: 30px;
+    }
+
+    .cloud.big {
+      width: 100px;
+      height: 60px;
+      top: 40%;
+      left: -150px;
+      animation-duration: 90s;
+    }
+    .cloud.big:before {
+      width: 50px;
+      height: 50px;
+      top: -25px;
+      left: 15px;
+    }
+    .cloud.big:after {
+      width: 40px;
+      height: 40px;
+      top: -20px;
+      left: 50px;
+    }
+
+    @keyframes float {
+      from { transform: translateX(0); }
+      to { transform: translateX(150vw); }
+    }
+
+    .switch {
+      width: 110px;
+      height: 55px;
+      background: #333;
+      border-radius: 50px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.5s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      z-index: 10;
+    }
+
+    .circle {
+      width: 45px;
+      height: 45px;
+      background: #FFD700;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      transition: all 0.8s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 20px rgba(255, 223, 0, 0.6);
+    }
+
+    .sun-rays {
+      position: absolute;
+      width: 65px;
+      height: 65px;
+      border: 2px solid rgba(255, 223, 0, 0.6);
+      border-radius: 50%;
+      animation: spin 5s linear infinite;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .switch.dark {
+      background: #111;
+    }
+
+    .switch.dark .circle {
+      left: 60px;
+      background: #f1f1f1;
+      box-shadow: 0 0 15px rgba(255,255,255,0.6);
+    }
+
+    .switch.dark .sun-rays {
+      display: none;
+    }
+
+    .switch.dark .star {
+      opacity: 1;
+    }
+
+    /* Hide clouds at night */
+    body.night .cloud {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+ 
+  <div class="cloud small"></div>
+  <div class="cloud big"></div>
+  <div class="cloud small" style="top:65%; animation-duration:70s;"></div>
+
+  <div class="switch" id="toggle">
+    <div class="circle">
+      ☀️
+      <div class="sun-rays"></div>
+    </div>
+    <div class="star" style="top:10px; left:15px;"></div>
+    <div class="star" style="top:35px; left:80px;"></div>
+    <div class="star" style="top:5px; left:95px;"></div>
+    <div class="star" style="top:45px; left:30px;"></div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("toggle");
+    const circle = toggle.querySelector(".circle");
+    const sunRays = toggle.querySelector(".sun-rays");
+    const body = document.body;
+
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("dark");
+      body.classList.toggle("night");
+
+      if (toggle.classList.contains("dark")) {
+        circle.textContent = "🌙";
+        body.style.background = "#0b0c10"; // night sky
+      } else {
+        circle.textContent = "☀️";
+        body.style.background = "#87CEEB"; // day sky
+      }
+
+      // restore rays when back to sun
+      if (!toggle.classList.contains("dark")) {
+        circle.appendChild(sunRays);
+      }
+    });
+  </script>
+</body>
+</html>
+-->

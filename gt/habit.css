@@ -1,0 +1,110 @@
+body {
+    
+  font-family: Arial, sans-serif;
+  background: black;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.app {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border:none;
+  width: 1000px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+
+  animation: glow 4s infinite alternate;
+}
+
+.app h3{
+z-index : 1;
+color: white;
+font-size: 2em;
+}
+
+
+@keyframes glow {
+    from{
+        box-shadow: 0 0 15px green, 0 0 25px darkolivegreen;
+    }
+    to{
+        box-shadow: 0 0 30px darkgreen, 0 0 40px greenyellow ;
+    }
+}
+
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.habit-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#habit-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#add-btn {
+  padding: 10px 15px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.habit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eef2f7;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.habit span {
+  font-size: 1rem;
+}
+
+.complete-btn {
+  padding: 5px 10px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.streak {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.delete-btn {
+  margin-left: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+

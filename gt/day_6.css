@@ -1,0 +1,270 @@
+.loader {
+    margin-left : 50px;
+  width: 60px;
+  height: 60px;
+  border: 6px solid green;
+  border-top: 8px solid #3498db; 
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader_ball{
+width: 60px;
+  height: 60px;
+    border-radius: 50%;
+  
+       background: linear-gradient(90deg, #3498db, #2ecc71);
+  animation: circulate 1s linear infinite;
+
+}
+@keyframes circulate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.progress-bar {
+    margin:50px;
+  width: 300px;
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+
+  border :2px solid black;
+}
+
+.progress {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #3498db, #2ecc71);
+  animation: load 5s linear infinite alternate;
+}
+
+@keyframes load {
+  0% { width: 0; }
+  100% { width: 100%; }
+
+}
+
+.progress_1-bar {
+    margin:50px;
+  width: 300px;
+  height: 20px;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+ 
+  border : 2px solid orange;
+ box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.progress_1 {
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, orange,red);
+  animation: load_1 5s ease   infinite 1s;
+
+}
+
+@keyframes load_1 {
+ 0% { transform: translateX(0%); }
+  100% { transform : translateX(400%); }
+
+}
+/*
+.progress-circle {
+  transform: rotate(-90deg); 
+}
+
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.bg {
+  stroke: #eee; 
+}
+
+.progress {
+  stroke: #3498db; 
+  stroke-dasharray: 314; 
+  stroke-dashoffset: 314; 
+  animation: fill 3s linear forwards;
+}
+
+@keyframes fill {
+  from { stroke-dashoffset: 314; } 
+  to   { stroke-dashoffset: 0;   } 
+}
+
+  */
+  body {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.poster {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(80%) contrast(120%) saturate(150%);/*filter*/
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  mix-blend-mode: difference;/* to blend with bg*/
+  text-shadow: 
+    2px 2px red, 
+    -2px -2px cyan;
+  animation: glitch 1s infinite;
+}
+
+/* Glitch animation */
+@keyframes glitch {
+  0% { transform: translate(-50%, -50%); }
+  20% { transform: translate(-48%, -52%); }
+  40% { transform: translate(-52%, -48%); }
+  60% { transform: translate(-50%, -50%); }
+  80% { transform: translate(-51%, -49%); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+
+.sliding_card{
+ 
+    width:400px;
+
+    overflow:hidden;
+    position: RELATIVE;
+
+    border-radius:15px;
+   /*
+    display: flex;
+    justify-content: center;
+    align-items: center;
+*/
+/*
+    transition: all 0.3s ease;
+
+   */
+}
+.sliding_card img{
+     
+    width:100%;
+    /*
+    object-fit: cover;
+    */
+    
+    border-radius: 10px;
+
+display : block          
+
+}
+
+.sliding_content{
+
+    max-height: 0;
+    /*
+    position: absolute;
+   */
+    width:100%;
+    overflow: hidden;
+  
+
+    background :radial-gradient(circle at center,lightgreen ,cyan,pink);
+    color:YELLOW;
+
+    border-radius : 10px 10px 0 0;
+    
+    display: FLEX;
+    text-align: center;
+    text-decoration: YELLOW underline solid;
+    padding : 0 15px;
+
+    transition: max-height 0.5s ease,padding 0.5s ease;
+
+}
+
+.sliding_card:hover{
+   
+ box-shadow: 0 0 20px 5px black
+             0 0 25px 10px grey;
+
+
+}
+
+.sliding_card:hover .sliding_content{
+    max-height:800px;
+    padding:15px;
+
+}
+
+/* MOVING BG */
+body{
+    background: linear-gradient(150deg,pink,lightgreen,orange,purple);
+    background-size: 400% 400%;
+
+    animation: move 10s ease infinite;
+}
+
+@keyframes move {
+    0%{background-position: 50% 0%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 50% 0%;}
+}
+
+.card {
+  margin-top: 200px;
+  position: relative;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card .content {
+  position: absolute;
+  top:-100%; /* hidden below */
+  left:0;
+  right:0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 20px;
+  transition: top 0.4s ease;
+}
+
+.card:hover .content {
+  top: 0; /* slides down */
+}

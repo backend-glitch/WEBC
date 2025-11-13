@@ -27,4 +27,4 @@ HTML • CSS • JavaScript • TypeScript • React • Tailwind CSS
 
 ## ✨ Author
 **Arjun Verma**  
-📎 [GitHub Profile](https://github.com/backend-glitch)
+[![Follow me on GitHub](https://img.shields.io/badge/-@backend--glitch-24292f?style=for-the-badge&logo=github&logoColor=white)](https://github.com/backend-glitch)

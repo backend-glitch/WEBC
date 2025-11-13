@@ -1,0 +1,162 @@
+🌱 Level 1 – Beginner (Learn the basics of fetching data)
+1️⃣ Random Joke Generator
+
+API: Official Joke API
+
+Concepts: fetch(), .json(), updating DOM
+What to build:
+A button → fetches a random joke → displays setup & punchline.
+
+Key learning: Basic API request and response parsing.
+
+2️⃣ Dog Image Generator
+
+API: Dog CEO API
+
+What to build:
+Click a button → get a random dog image → show it in an <img> tag.
+
+Sample endpoint:
+
+https://dog.ceo/api/breeds/image/random
+
+
+Key learning:
+How to display image URLs from API data.
+
+3️⃣ Cat Facts App
+
+API: Cat Facts API
+
+What to build:
+Shows a random fact each time you press “New Fact”.
+
+Key learning:
+How to handle simple text data from an API.
+
+🌿 Level 2 – Intermediate (Working with multiple endpoints & data structures)
+4️⃣ Country Info App
+
+API: REST Countries API
+
+What to build:
+Enter a country name → show its flag, population, region, capital, etc.
+
+Example endpoint:
+
+https://restcountries.com/v3.1/name/india
+
+
+Key learning:
+Nested data objects, arrays, handling fetch() errors.
+
+5️⃣ Weather Dashboard
+
+API: OpenWeatherMap API
+
+What to build:
+Enter a city → show temperature, condition, humidity, and weather icon.
+
+Key learning:
+Chaining API calls, handling coordinates, using async/await.
+
+6️⃣ Advice Slip Generator
+
+API: Advice Slip API
+
+What to build:
+Click → new random life advice appears.
+
+Key learning:
+Dealing with nested JSON and quote formatting.
+
+🌳 Level 3 – Advanced (Dynamic data, pagination, searching, multiple APIs)
+7️⃣ GitHub User Finder
+
+API: GitHub Users API
+
+What to build:
+Enter a username → show profile pic, followers, repos, bio, etc.
+
+Key learning:
+Working with large structured JSON data.
+
+8️⃣ Movie Search App
+
+API: OMDb API
+
+What to build:
+Type a movie name → get poster, rating, genre, and summary.
+
+Key learning:
+Query parameters (?s=batman), error handling (movie not found).
+
+9️⃣ Crypto Price Tracker
+
+API: CoinGecko API
+
+What to build:
+Show top 10 cryptocurrencies with name, price, and market cap.
+Auto-refresh every few seconds.
+
+Key learning:
+Looping through arrays, live updating data.
+
+🔟 NASA Picture of the Day
+
+API: NASA APOD API
+
+What to build:
+Shows NASA’s daily photo and description.
+Add a “Previous Day” button using query params.
+
+Key learning:
+Date parameters, image handling, and API keys.
+
+🚀 Level 4 – Pro (Combining APIs)
+11️⃣ Travel Info Dashboard
+
+APIs Used:
+
+Geocoding API (get city coordinates)
+
+Weather API (get weather)
+
+Unsplash API (get city photo)
+
+What to build:
+Search a city → show its image, temperature, and country details.
+
+Key learning:
+Using multiple APIs together and handling async requests.
+
+12️⃣ News Dashboard
+
+API: NewsAPI.org
+
+What to build:
+Search a keyword → show latest news articles with title, source, and image.
+
+Key learning:
+Pagination, rate limits, and rendering cards dynamically.
+
+🧠 How to Practice Each
+
+For every project:
+
+Start with fetch(url)
+
+console.log(data) to explore structure
+
+Extract only what you need
+
+Display it on the page
+
+Add input boxes / buttons for interactivity
+
+💡 Bonus tip:
+
+When you test APIs, you can use this site to see responses before coding:
+👉 https://reqbin.com/
+
+You can paste any API URL and see what it returns.

@@ -1,0 +1,46 @@
+🏗 Travel Dashboard Mini-Checklist
+
+HTML Layout – Input box + sections for:
+
+Weather 🌡️
+
+Images 🏞️
+
+News 📰
+
+Country info 🏳️
+
+APIs to integrate:
+
+Geocoding → city → lat/lon
+
+OpenWeatherMap → weather by lat/lon
+
+Unsplash → city images
+
+NewsAPI → city-related news
+
+REST Countries → country info
+
+JS Tasks:
+
+Fetch geocoding first → get lat/lon
+
+Fetch weather → display
+
+Fetch images → display
+
+Fetch news → display
+
+Fetch country info → display
+
+Extras for fun:
+
+Loading animation / fade-in
+
+Error handling (invalid city)
+
+Optional: last searched city in localStorage
+
+💡 Pro Tip:
+Start small – first make it fetch weather only. Once that works, add images, then news, then country info. Step by step!

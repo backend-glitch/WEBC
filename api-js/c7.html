@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crypto Price Tracker 💰</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f2027;
+      color: #fff;
+      text-align: center;
+      margin: 0;
+      padding: 2em;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    select {
+      padding: 0.5em;
+      border-radius: 8px;
+      font-size: 1em;
+      margin-bottom: 1em;
+    }
+
+    .crypto {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1.5em;
+      margin: 0.5em;
+      border-radius: 12px;
+      min-width: 200px;
+      transition: transform 0.3s ease;
+    }
+
+    .crypto:hover {
+      transform: scale(1.05);
+    }
+
+    .price {
+      font-size: 1.6em;
+      margin-top: 0.3em;
+      font-weight: bold;
+    }
+
+    .up {
+      color: #00ff6a;
+    }
+
+    .down {
+      color: #ff4f4f;
+    }
+
+    #update-time {
+      margin-top: 1em;
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
+
+    #loading {
+      font-size: 1.2em;
+      color: gold;
+      margin-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>💹 Live Crypto Price Tracker</h1>
+
+  <select id="coinSelect">
+    <option value="bitcoin">Bitcoin</option>
+    <option value="ethereum">Ethereum</option>
+    <option value="dogecoin">Dogecoin</option>
+    <option value="solana">Solana</option>
+    <option value="shiba-inu">Shiba Inu</option>
+    <option value="cardano">Cardano</option>
+  </select>
+
+  <div id="crypto-container"></div>
+  <p id="update-time"></p>
+  <p id="loading">Fetching latest prices...</p>
+
+  <script src="c7.js"></script>
+</body>
+</html>

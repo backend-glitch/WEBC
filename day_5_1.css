@@ -1,0 +1,343 @@
+ body {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-family: Arial, sans-serif;
+
+  }
+
+  .hover-color {
+    top:50px;
+    width: 200px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    box-shadow: 0px 0px 20px 20px rgba(0,0,255,0.5);
+    transition: background-color 0.5s, transform 0.3s;
+  }
+
+  .hover-color:hover {
+    background-color: #2ecc71;
+    transform: scale(1.1); /* Slightly enlarge on hover */
+     box-shadow: 0px 0px 20px 20px rgba(0,255,0,0.5);
+      transform: translateY(-5px); /* Slight lift effect */
+  }
+
+
+  .text-shadow {
+   
+  font-size: 50px;
+  color: #3498db;
+  text-align: center;
+  transition: text-shadow 0.3s, color 0.3s;
+  cursor: pointer;
+}
+
+.text-shadow:hover {
+  color: #e74c3c; /* Optional color change */
+  text-shadow: 0px 0px 10px rgba(0,255,0,0.5); /* Shadow effect */
+  /*text shadow: offsetx offsety radius-spread rgba() */
+
+}
+.neon-text {
+  font-size: 60px;
+  color: #fff; /* Base text color */
+  text-align: center;
+  transition: text-shadow 0.3s;
+  cursor: pointer;
+}
+
+/* Neon/glow on hover using multiple shadows */
+.neon-text:hover {
+  text-shadow:
+    0 0 5px #f39c12,
+    0 0 10px #f39c12,
+    0 0 20px #f39c12,
+    0 0 40px #e74c3c,
+    0 0 80px #e74c3c,
+    0 0 90px #e74c3c,
+    0 0 100px #e74c3c,
+    0 0 150px #e74c3c;
+
+    transform: scale3d(1.2,1.5,1);
+}
+
+.card {
+    top :100px;
+    width: 250px;
+    height: 150px;
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    
+    transform: scale(1.1) rotate(-2deg);
+    
+    border-radius: 20px ;
+  background: linear-gradient(45deg, #3498db, #2ecc71);
+  /*
+  transform: scale3d(1.1, 1.1, 1.05);
+*/
+
+  }
+  /*
+  .card {
+  width: 200px;
+  height: 100px;
+  background-color: #3498db;
+  transition: transform 0.3s;
+}
+  */
+
+
+  /*Flip card */
+
+.card_2_wrapper {
+  perspective: 1500px; /* Allows 3D rotation to appear realistic. Without it, flip looks flat.*/
+  cursor: pointer;
+}
+.card_2_wrapper:hover {
+  transform: scale(1.05); /* Scaling the wrapper avoids conflicting with 3D rotation of the card. */
+}
+
+.card_2 {
+  width: 200px;
+  height: 120px;
+  position: relative;
+  transform-style: preserve-3d; /* keep front & back in 3D */
+  transition: transform 0.6s;
+}
+
+/* Flip on hover */
+.card_2_wrapper:hover .card_2 {
+  transform: rotateY(180deg); /* smooth flip */
+}
+
+
+
+/* Scale wrapper for lift */
+
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden; /*backface-visibility: hidden ensures only the visible side shows, preventing flicker. */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: white;
+}
+
+
+
+.front {
+  background: #3498db;
+}
+
+.back {
+  background: #e74c3c;
+  transform: rotateY(180deg);
+}
+
+
+/* card 5 */
+
+body {
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  margin-top: 50px;
+  position: relative;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card .content {
+  position: absolute;
+  top:-100%; /* hidden below */
+  left:0;
+  right:0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 20px;
+  transition: top 0.4s ease;
+}
+
+.card:hover .content {
+  top: 0; /* slides down */
+}
+
+/* card 6 */
+/* Advanced effects */
+
+.card_1 {
+  margin-bottom: 400px;;
+  position: relative;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.card_1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease; /* zoom effect */
+}
+
+.card_1:hover img {
+  transform: scale(1.2); /* zoom in image */
+}
+
+.card_1 .content_1 {
+  position: absolute;
+  bottom: -100%; /* hidden below */
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  transition: all 0.5s ease;
+}
+
+.card_1:hover .content_1 {
+  bottom: 0;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Staggered text animation */
+.card_1 .content_1 h3,
+.card_1 .content_1 p,
+.card_1 .content_1 button {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.card_1:hover .content_1 h3 {
+  transition-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card_1:hover .content_1 p {
+  transition-delay: 0.4s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card_1:hover .content_1 button {
+  transition-delay: 0.6s;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Button styling */
+button {
+  padding: 8px 15px;
+  background: #3498db;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*card 7 */
+
+
+
+.card_3 {
+  margin-top : 400px;
+  position: relative;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.card_3 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay (hidden above the card initially) */
+.overlay_3 {
+  position: absolute;
+  top: -100%;   /* 👈 Start fully hidden above */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(52, 152, 219, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: top 0.5s ease;
+}
+
+.card_3:hover .overlay_3 {
+  top: 0;  /* 👈 Slides down over the image */
+}
+
+.overlay_3 h3, 
+.overlay_3 p {
+  margin: 0;
+}

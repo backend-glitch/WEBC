@@ -1,0 +1,244 @@
+.card {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Rotating neon border */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-top: 2px solid transparent;
+  border-radius: 12px;
+  top: 0;
+  left: 0;
+
+  /* Gradient line effect */
+  border-image: linear-gradient(90deg, #ff0080, #00f7ff, #39ff14, #ffea00) 1;
+  border-image-slice: 1;
+
+  animation: rotateLine 4s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes rotateLine {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #111;
+}
+
+.card_2 {
+  width: 200px;
+  height: 200px;
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.square-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-top: 4px solid #00ffcc; /* 🔹 visible line */
+  box-sizing: border-box;
+  animation: spin 2s linear infinite;
+  border-radius: 12px; /* keep corners smooth */
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* you want this */
+
+.card_3{
+    width : 190px;
+    height: 254px;
+    background: black;
+    position : relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+
+    border-radius: 20px;
+}
+
+.card_3 h3{
+z-index : 1;
+color: white;
+font-size: 2em;
+}
+
+.card_3::before{
+    content:'';/**/
+   position : absolute;/**/
+   width : 100px;
+   background: linear-gradient(180deg,rgb(0,183,255),rgb(255,48,255));
+
+   height: 130%;
+
+   animation: rotate 1.5s linear infinite;
+   transition: all 0.2s ease;
+}
+
+@keyframes rotate {
+    from{
+        transform : rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.card_3::after{
+    content  : ''; /**/
+    position : absolute;/**/
+    background: black;
+    inset:5px;/**/
+    border-radius: 15px;
+}
+
+
+.card_4 {
+  width: 190px;
+  height: 254px;
+  background: black;
+  position: relative;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.card_4 h4{
+  z-index: 1;
+  color: white;
+  font-size: 2em;
+}
+
+.card_4::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: conic-gradient(
+    from 0deg,
+    rgb(0,183,255),
+    rgb(255,48,255),
+    rgb(0,183,255)
+  );
+  animation: rotate 3s linear infinite;
+  border-radius: 0;   /* 👈 force square edges */
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.card_4::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  background: black;
+  border-radius: 15px;
+}
+
+
+.card_5 {
+  width: 200px;
+  height: 120px;
+  position: relative;
+  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card_5::before {
+  content: "";
+  position: absolute;
+  inset: -4px; /* make bigger so border is visible */
+  background: repeating-linear-gradient(
+    45deg,
+    cyan,
+    cyan 10px,
+    magenta 10px,
+    magenta 20px
+  );
+  animation: move 2s linear infinite;
+}
+
+.card_5::after {
+  content: "";
+  position: absolute;
+  inset: 5px; /* mask inside */
+  background: black;
+  border-radius: 8px;
+}
+
+@keyframes move {
+  from { background-position: 0 0; }
+  to { background-position: 40px 0; }
+}
+
+
+
+.card_6 {
+  width: 200px;
+  height: 120px;
+  position: relative;
+  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card_6::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  background: repeating-conic-gradient(
+    cyan 0deg 20deg,
+    magenta 20deg 40deg
+  );
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

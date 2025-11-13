@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Glass Card</title>
+<style>
+/* 🔹 Background setup */
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1350&q=80') 
+              no-repeat center/cover;
+  font-family: Poppins, sans-serif;
+}
+
+/* 🔹 Neon glass card */
+.card {
+  position: relative;
+  width: 320px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  /* Neon glow */
+  box-shadow: 
+    0 0 10px #0ff,
+    0 0 30px #0ff,
+    0 0 60px #0ff;
+
+  text-align: center;
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* Hover glow effect */
+.card:hover {
+  box-shadow:
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+  transform: scale(1.03);
+}
+
+/* Title */
+.card h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #0ff;
+  text-shadow: 
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+}
+
+/* Subtitle */
+.card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #e0f7f7;
+  opacity: 0.85;
+}
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Neon Glass Card</h2>
+    <p>Blending neon glow and frosted glass to create a futuristic UI effect </p>
+  </div>
+
+</body>
+</html>

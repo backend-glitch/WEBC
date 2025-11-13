@@ -8,6 +8,7 @@ This repository documents my journey of learning **Frontend Web Development** �
 
 | Folder |level| Description |
 |-------|--|--------------|
+| Notes | ⚪ | Material |
 | gt    | 🟡 | level-1 : my basic web3 projects|
 | my    | 🟡  | level-2 : some standard projects|
 | api-js | 🟢 | level-3 : some advanced js projects using api|

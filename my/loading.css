@@ -1,0 +1,61 @@
+*{
+    margin : 0;
+    padding : 0;
+}
+
+body{
+    background: black;
+    display : flex;
+    justify-content: center;
+    align-items : center;
+
+    min-height : 100vh;
+}
+
+.loader{
+    display:flex;
+    width : 60px;
+    height  :50px;
+}
+
+.loader span{
+display : block;
+width : 8px;
+height :  100%;
+background : purple;
+
+margin : auto;
+animation : animate 1s infinite ease-in-out;
+animation-delay: calc(.1s* var(--i));
+}
+
+@keyframes animate{
+    0%,
+    40%,
+    100%
+    {
+        transform : scaleY(0.05);
+    }
+    20%{
+        TRANSFORM: scaleY(1);
+    }
+}
+
+.loader span:nth-child(1){
+    background : purple;    
+}
+.loader span:nth-child(2){
+    background : cyan;    
+}
+.loader span:nth-child(3){
+    background : lightgreen;    
+}
+.loader span:nth-child(4){
+    background : yellow;    
+}
+.loader span:nth-child(5){
+    background : orange;    
+}
+.loader span:nth-child(6){
+    background : purpel;    
+}

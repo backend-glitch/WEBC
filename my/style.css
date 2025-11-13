@@ -1,0 +1,113 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #111;
+  color: white;
+  transition: 0.5s;
+}
+
+/* Card */
+.card {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Neon Name */
+.name {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: rgb(0, 255, 30);
+  text-shadow: 0 0 10px rgb(0, 255, 94), 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+/* Bio */
+.bio {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* Glowing Button */
+.glow-btn {
+  padding: 12px 25px;
+  background: #111;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.glow-btn:hover {
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+  transform: scale(1.1);
+}
+
+/* Toggle Switch */
+#toggle {
+  display: none;
+}
+
+.switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 25px;
+  background: #555;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.switch::after {
+  content: '';
+  width: 21px;
+  height: 21px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+#toggle:checked + .switch {
+  background: #00ff88;
+  box-shadow: 0 0 15px #00ff88;
+}
+#toggle:checked + .switch::after {
+  transform: translateX(25px);
+}
+
+/* Dark Mode */
+#toggle:checked ~ body {
+  background: white;
+  color: black;
+}
+#toggle:checked ~ body .card {
+  background: #f5f5f5;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+#toggle:checked ~ body .name {
+  color: #111;
+  text-shadow: none;
+}
+#toggle:checked ~ body .bio {
+  color: #333;
+}

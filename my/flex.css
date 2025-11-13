@@ -1,0 +1,82 @@
+.container_1{
+    background-color : blue;
+  height : 600px;
+  width : 800px;
+
+     /*to activate the flex properties */
+  display : flex;
+
+     /*decides the direction of the items */
+  flex-direction: row;    /* default direction : row */
+
+     /* to prevent the overflow of items in the container */
+  flex-wrap: wrap;
+
+     /* flex-flow :  flex-direction + flex-wrap */
+
+     /* to align the items in the axis of flex direction*/
+  justify-content: space-evenly;
+
+     /* to align items in perpendicular axis wrt to the flex direction*/
+  align-items: center;
+
+     /* to align the space between the items */
+  align-content : top;
+
+     /* to prevent the overflow */
+  flex-basis: 200px;
+}
+
+.item_1{
+    background-color: green;
+    width: 100px;
+    height : 100px;
+    border-radius: 30px;
+
+    text-align: center;
+
+    order : 1;
+
+       /* to make items occupy remaining space*/
+    flex-grow: 1;
+ 
+   /* max-width :50px; */
+
+
+      /*it is like flex-grow. */
+   flex-basis: 50%;
+
+
+}
+
+.item_2{
+    background-color: green;
+    width: 100px;
+    height : 100px;
+    border-radius: 30px;
+
+       /* to align the text within the item*/
+    text-align: center;
+
+       /* to put items in order*/
+    order : 2;
+
+       /*allow relative growth wrt to the elements */
+    flex-grow: 1;
+
+       /* align the items individually*/
+    align-self: flex-end;
+}
+
+.item_3{
+    background-color: green;
+    width: 100px;
+    height : 100px;
+    border-radius: 30px;
+
+    text-align: center;
+
+    order : 3;
+
+    flex-grow: 2;
+}

@@ -1,0 +1,98 @@
+body{
+    background-color: black;
+}
+
+.btn{
+
+    
+    border : none;
+    font-weight: bold;
+    color:white;
+    background-color: green;
+
+    padding: 10px;
+    border-radius: 10px;
+}
+.btn:hover{
+    transform: scale(1.2);
+   color:green;
+   background-color: lightgreen;
+   cursor:pointer;
+}
+
+.todo_name{
+    border: dotted;
+    border-color: orange;
+    padding:10px;
+
+    background-color: rgba(0,0,0,0.2);
+
+    border-radius: 10px;
+
+}
+.todo_name:focus{
+ border:none;
+ border-color: green;
+ transform: scale(1.08);
+} 
+.delete-btn{
+    position: relative;
+    margin : 20px;
+    border: none;
+    border-radius: 10px;
+    padding:10px;
+
+    font-weight: bold;
+    
+    width :100px;
+    color: white;
+    background-color: red;
+
+}
+.delete-btn:hover{
+    transform: scale(1.1) ;
+    COLOR:RED;
+    background-color: lightcoral;
+    cursor:grab;
+}
+
+
+.todogrid{
+
+    display: grid;
+    grid-template-columns: 200px 100px 100px;
+    
+    margin-right: 10px;
+    column-gap: 20px;
+
+    align-items: center;
+
+     color : orange;
+}
+.js_date{
+    padding: 10px;
+    border : 2px solid orange;
+    color: orange;
+    border-radius: 10px;;
+}
+.todo_name{
+    color : orange;
+}
+
+.date_add{
+
+    display: grid;
+
+    grid-template-columns: 200px 150px 150px;
+
+    align-items: center;
+
+    margin-right : 20px;
+
+    column-gap: 80px;
+
+}
+
+
+
+

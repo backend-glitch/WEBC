@@ -1,0 +1,53 @@
+body{
+    background-color: black;
+
+    background-size: 100px 100px;
+}
+
+.js-subscribe-button_1{
+    width : 200px;
+  height : 200px;
+  background-color: red;
+  color:white;
+
+  font-weight: bolder;
+  font-size: 25px;
+  border-radius: 80px;
+
+  animation: glow 5s ease infinite alternate;
+   
+
+  margin:50%;
+}
+
+@keyframes glow {
+    from{
+        box-shadow: 0 0 15px darkred, 0 0 20px red;
+    }
+    to{
+        box-shadow: 0 0 25px maroon, 0 0 30px red;
+    }
+    
+}
+/*
+.js-subscribe-button:hover{
+    background-color: white;
+    color:red
+}
+    */
+.is_subscribed{
+    color:red;
+    background-color: white;
+    animation: white_glow 5s infinite ease;
+}
+
+@keyframes white_glow {
+    from{
+        box-shadow: 0 0 15px darkgray, 0 0 20px white;
+    }
+    to{
+        box-shadow: 0 0 25px darkgrey, 0 0 30px white;
+    }
+    
+}
+

@@ -1,5 +1,6 @@
 const slider = document.querySelector(".slider");
 const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
 
 let index = 0;
 
@@ -17,4 +18,26 @@ document.querySelector(".prev").addEventListener("click", () => {
 
 function updateSlider() {
     slider.style.transform = `translateX(${-600 * index}px)`;
+
+    
+    
+     updateDots();
+}
+
+function updateDots() {
+    dots.forEach((dot, i) => {
+       // dot.classList.toggle("active", i === index);
+
+       if (i === index) {
+    dot.classList.add("active");
+} else {
+    dot.classList.remove("active");
+}
+
+
+        dot.addEventListener("click", () => {
+        index = i;
+        updateSlider();
+    });
+    });
 }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme Toggle</title>
+
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #111111;
+  }
+
+  body.dark {
+    --bg: #111111;
+    --text: #ffffff;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* Toggle Switch Style */
+  .switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 50px;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: #4a90e2;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(28px);
+  }
+</style>
+</head>
+<body>
+  <div>
+    <h1>ARJUN 2025</h1>
+    </div>
+    <br>
+<label class="switch">
+  <input type="checkbox" id="themeToggle">
+  <span class="slider"></span>
+</label>
+
+<script>
+const toggle = document.getElementById("themeToggle");
+
+// Load saved theme
+if(localStorage.getItem("theme") === "dark"){
+  document.body.classList.add("dark");
+  toggle.checked = true;
+}
+
+// Toggle theme on click
+toggle.addEventListener("change", () => {
+  if(toggle.checked){
+    document.body.classList.add("dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    document.body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+  }
+});
+</script>
+
+</body>
+</html>

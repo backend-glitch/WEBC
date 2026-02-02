@@ -87,6 +87,8 @@ app.patch("/api/users/:id",(req,res)=>{
 
 
 // mongo db
+// connection
+mongoose.connect("mongodb://localhost:27017/firstdb").then(() => console.log("Mongdb Connected") ).catch((err) => console.log("error",err));
 //schema
 const userschema = new mongoose.Schema({
 
@@ -108,6 +110,9 @@ const userschema = new mongoose.Schema({
         unique:true,
     },
 });
+
+// model
+const User = mongoose.model("user",userschema);
 
 // live server
 app.listen(9000,() =>{ console.log(`running on http://localhost:9000`)});

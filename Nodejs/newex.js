@@ -50,7 +50,6 @@ app.get("/api/users",(req,res) => {
 
     return res.json({status : "success",users});
   
-
 });
 
 app.get("/api/users/:id",(req,res)=>{
@@ -66,18 +65,30 @@ app.get("/api/users/:id",(req,res)=>{
 
 
 
-app.post("/api/users",(req,res)=>{
+app.post("/api/users", async(req,res)=>{
 
     const body = req.body;
 
-    if(!body || !body.first_name) return res.status(400).json({msg: "First name required."});
+    if(!body || !body.first_name|| body.last_name) return res.status(400).json({msg: "First name required."});
 
+
+    const result = await User.create({
+        firstName : user.first_name,
+        lastName : user.last_name,
+        email : user.email,
+        gender : user.gender,
+    })
+
+    console.log("result",result);
+    return res.status(201).json({msg : "created successfully"});
+    
+    /*
     users.push({...body,id:users.length+1});
 
     fs.writeFile("./MOCK_DATA.json",JSON.stringify(users),(err,data) => {
         return res.status(201).json({msg:"success",id:users.length});
     })
-
+*/
 
 });
 
@@ -102,6 +113,10 @@ const userschema = new mongoose.Schema({
       type:String,
       required:false,
 
+    },
+
+    gender:{
+        type:String,
     },
 
     email:{

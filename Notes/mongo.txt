@@ -1,0 +1,81 @@
+info about MONGO DB or mongo queries :
+
+1.cls - to clear terminal
+
+2. use dbs - to use database
+
+3. show dbs - to see main database files
+
+4.exit- to exit mongosh shell
+
+5.mongosh - to enter the mongosh shell
+
+6.to enter the new db files : use dbs > use admin > use school 
+
+7.db.createCollections("students") -> to create a new collection within the file students.
+
+8.db.dropDatabase()
+
+9.db.students.insertOne({name: "aman",age: 20}) - to insert new data under the collections
+
+10.db.students.insertMany({name:1}, {name:2} , {name:3})
+
+11.show collections -> to see the collection
+
+12.db.students.find() -> to find the data under collection
+
+13.db.students.find({name:"arjun"}) or db.students.find(1) -> to find first databit.
+
+14.db.students.find().sort({name: 1}) -> to sort data in ascending , to sort in descending order we use name: -1
+
+15.db.students.find().limit(x) -> to set the limit till x databits will be only shown
+
+16.db.students.find().sort({age:25}).limit(1) -> to get the lowest age from ascending order of agewisw
+
+17.db.students.find({}, {name : true , _id : false}) -> to print all the names without any other fields
+
+18.db.students.updateOne({name : "arjun"}, {$set:{age : 35}}) or {$set:{field_data}}, {$set:{data_tobe_changedin that_field}}) -> to change the data in one field_data
+
+19.db.students.updateMany({name:"arjun"}, {$set:{attendance : 75%}}) -> to set the attendance criteria for those databits it is not there
+
+20.db.students.updateMany({name: "arjun"}, {$unset:{attendance:""}}) -> to unset the particular field_data
+
+21.db.students.updateMany({attendance:{$exits:false}}, {$set:{attendance:75%}}) -> put default attendance as 75% for those whose this field doesnt exists.
+OR ({filter} , {update })
+
+22.db.students.deleteOne({name: "arjun"}) or ({filter})
+
+23.db.students.deleteMany({attendance : 75%}) -> to delete that datafields with attendance equals to 75%.
+
+24.db.students.deleteMany({attendance:{$exits:false}})
+
+25.db.students.find({age: {$lte : 27}}) -> print all names with age less than or equal to 27.
+
+26.db.students.find({age: {$lt : 27}}) -> print all names with age less than 27.
+
+27.less than -> lt
+   less than equal -> lte
+   greater than -> gt
+   greater than equal -> get
+
+28.db.students.find({age:{$gte : 18 , $lte: 30}})
+
+29. db.students.find({name : {$nin :["arjuin","aman"]}}) -> will print all names except the the mentioned one
+
+30.db.students.find({$and:[attendance:{$gte: 75},{gpa : {$gt : 8}}]}) -> should satisfy both condn
+
+31.and , nor , or , not 
+
+
+32.db.students.find({age: {$not: {$gte: 30}}})
+
+33.db.students.createIndex({name: 1}) -> to apply index 
+
+34.db.students.getIndexes() -> to get all getIndexes
+
+35.show collections -> to see all collections.
+
+36.db.createCollection("teachers", {capped: true, size:1000000, max:100}, {autoIndexedId : false})
+
+37.db.students.drop() -> to drop this collection.
+

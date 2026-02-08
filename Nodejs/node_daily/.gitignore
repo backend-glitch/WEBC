@@ -1,6 +1,11 @@
-# env variables
+# Environment Variables (CRITICAL!)
 .env
 .env.local
+.env.*.local
 
-# dependencies
+# Dependencies
 node_modules/
+
+# Logs
+logs.txt
+*.log

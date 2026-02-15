@@ -50,7 +50,7 @@ export function initBlobs(canvas) {
     }
   }
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 30; i++) {
     objects.push(new Blob());
   }
 

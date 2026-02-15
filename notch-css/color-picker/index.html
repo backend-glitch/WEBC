@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gradient Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div class="container">
+    <div class="container-inner">
+    <h2>🎨 Gradient Generator 🎨</h2>
+
+    <div class="controls">
+        <input type="color" id="color1" value="#ff7e5f">
+        <input type="color" id="color2" value="#feb47b">
+
+        <select id="direction">
+            <option value="to right">To Right</option>
+            <option value="to left">To Left</option>
+            <option value="to bottom">To Bottom</option>
+            <option value="to top">To Top</option>
+            <option value="45deg">45deg</option>
+            <option value="135deg">135deg</option>
+        </select>
+    </div>
+
+    <div class="preview" id="preview"></div>
+
+    <textarea id="cssCode" readonly></textarea>
+
+    <button id="copyBtn" onclick="copyCode()">Copy CSS</button>
+
+   <!-- <div class="code-box">
+    <code id="code">
+        background: linear-gradient(45deg, red, blue);
+    </code>
+    <button id="copyBtn">Copy CSS</button>
+</div> -->
+
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

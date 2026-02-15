@@ -1,0 +1,26 @@
+-- DATABASE
+CREATE DATABASE dbname;
+DROP DATABASE dbname;
+\l                          -- list databases
+\c dbname                   -- connect
+
+-- TABLES
+CREATE TABLE tablename (...);
+DROP TABLE tablename;
+\dt                         -- list tables
+\d tablename               -- table structure
+
+-- CRUD
+INSERT INTO table (col1) VALUES (val1);
+SELECT * FROM table;
+SELECT * FROM table WHERE condition;
+UPDATE table SET col1=val1 WHERE condition;
+DELETE FROM table WHERE condition;
+
+-- ORDERING & LIMITING
+ORDER BY column ASC/DESC
+LIMIT number
+OFFSET number
+
+-- QUIT
+\q

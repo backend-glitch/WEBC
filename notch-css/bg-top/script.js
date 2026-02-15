@@ -1,5 +1,7 @@
 import { initBlobs } from "./js-files/blobs.js";
 import { initParticles } from "./js-files/particles.js";
+import { initAurora } from "./js-files/aurora.js";
+
 
 const sections = document.querySelectorAll(".bg-section");
 
@@ -15,6 +17,11 @@ sections.forEach((section, index) => {
   if (index === 1) {
     animation = initParticles(canvas);
   }
+
+  if (index === 2) {
+  animation = initAurora(canvas);
+}
+
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {

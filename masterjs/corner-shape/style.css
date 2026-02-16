@@ -1,0 +1,41 @@
+body{
+    background: linear-gradient(to right,yellow,lightgreen);
+}
+
+.container{
+    background: linear-gradient(to left ,lightblue,cyan);
+    color: black;
+
+    position: relative;
+
+    width: 20rem;
+    height:20rem;
+    left: 35rem;
+    top : 10rem;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.card{
+background-color: white;
+color:black;
+
+width: 10rem;
+height:10rem;
+
+border-radius: 10px;
+
+line-height: 2rem;
+
+text-align: center;
+
+}
+
+.card:hover{
+
+    border-radius: 1em 4em 4em 1em;
+    corner-shape: round bevel bevel round;
+
+}

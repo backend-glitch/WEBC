@@ -1,7 +1,7 @@
 // BASICS
 //gsap.to()
 //gsap.from()
-//gsp.fromto()
+//gsp.fromTo()
 
 gsap.fromTo(".box1",{
      x: 190,

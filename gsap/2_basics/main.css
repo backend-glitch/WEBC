@@ -29,7 +29,7 @@ html,body{
     width : 100px;
     height : 100px;
 
-    background : linear-gradient(to right, green ,lightgreen);
+    background : linear-gradient(to left, green ,lightgreen);
 
     border-radius: 0 100px 100px 0;
 }

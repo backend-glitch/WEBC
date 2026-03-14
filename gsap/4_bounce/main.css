@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.ball {
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #ff4e50, #f9d423);
+    border-radius: 50%;
+    position: relative;
+}
+
+.shadow {
+    width: 80px;
+    height: 15px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    transform: scaleX(0.8);
+}

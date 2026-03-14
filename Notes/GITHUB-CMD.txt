@@ -142,3 +142,22 @@ git pull origin main
 
 # To untrack a file
 git rm --cached filename
+
+# to check history
+git log --oneline
+
+# to check diff in two timelines
+
+git diff --staged 
+
+git diff file1..file2
+
+#Create and move to new branch
+git branch -c newbranch
+
+
+# to temporarily save without git add . in other branch and code bw branches
+
+git stash
+
+git stash pop

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 *{
     margin : 0;
     padding : 0;
@@ -57,14 +59,35 @@ color : purple;
 
 H1{
     margin-bottom: 50PX;
+    position : relative;
+
+    
 }
 
-#pokiname{
-    border : none;
-    border-radius : 10px;
+h1::after{
 
-    color : white;
-    background-color: black;
+    content: "";
+    position: absolute;
+    width : 0px;
+    height : 2px;
+    bottom : 0;
+    left : 0;
+
+    background : linear-gradient(to right , black, grey);
+
+    transition: width 1s linear;
+}
+
+h1:hover::after{
+    width : 100px;
+}
+#pokiname{
+    border : 6px solid black;
+
+    border-radius : 15px;
+
+    color : black;
+    background-color: transparent;
 
     padding: 10px;
 
@@ -72,6 +95,28 @@ H1{
   
 
     margin-bottom: 20px;
+
+    position : relative;
+}
+
+#pokiname::after{
+
+    content : "";
+    position: absolute;
+
+    width : 0;
+    height : 9px;
+
+   top:0;
+    left : 0;
+    
+    background: linear-gradient(to right ,orange,pink);
+
+    transition: width 1s linear;
+}
+
+#pokiname:hover::after{
+    width : 100px;
 }
 
 .btn{
@@ -144,4 +189,16 @@ H1{
 
 #ball{
     background-color: white;
+}
+
+#pokiname2{
+    color  : black;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+     font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+    font-size: large;
+    
+    gap: 5px;
 }

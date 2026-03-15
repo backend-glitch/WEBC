@@ -23,6 +23,8 @@ async function fetchData(){
      const name = document.getElementById("pokiname").value.toLowerCase();
      const pokiimg = document.getElementById("pokiimg");
 
+    const name2 = document.getElementById("pokiname2");
+
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
      if(name === null) alert("Enter Pokemon Name");
@@ -31,10 +33,15 @@ async function fetchData(){
      const data = await response.json();
      console.log(data);
 
+     const naam = data.name;
+
     const pokisprites = data.sprites.front_default;
 
     pokiimg.src  = pokisprites;
     pokiimg.style.display = "block";
+
+    name2.innerText = naam;
+
 
 
     }catch(error){
@@ -52,6 +59,8 @@ async function getRandom(){
         const pokiimg  = document.getElementById("pokiimg");
         const pokinaam = document.getElementById("pokiname");
 
+          const name2 = document.getElementById("pokiname2");
+
         const maxpoki = 1025;
 
         const rand = Math.floor(Math.random() * maxpoki);
@@ -66,12 +75,14 @@ async function getRandom(){
         console.log(data);
 
         const name = data.name;
+          const naam2 = data.name;
         const pokiimgs = data.sprites.front_default;
 
         pokiimg.src = pokiimgs;
         pokiimg.style.display = "block";
 
         pokinaam.value = name;
+         name2.innerText = naam2;
 
     } catch(error){
         console.log(error);

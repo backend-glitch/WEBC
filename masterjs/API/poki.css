@@ -36,6 +36,7 @@ color : purple;
     height : 500px;
 
    background: rgba(255,255,255,0.08);
+   /* background-color: white; */
 
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -51,7 +52,32 @@ color : purple;
     justify-content: center;
 
     flex-direction: column;
+    
 }
+
+/* .card::before{
+
+      content: "";
+    position: absolute;
+
+
+     inset: -4px;   
+    border-radius: 18px;
+
+    background: linear-gradient(45deg, red, blue, green, yellow);
+    background-size: 400% 400%;
+
+    z-index: -1;
+
+    animation: borderMove 6s linear infinite;
+}
+
+@keyframes borderMove{
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} */
+
 /* 
 .card:hover{
     backdrop-filter: blur(8px);
@@ -92,7 +118,8 @@ h1:hover::after{
     padding: 10px;
 
     box-decoration-break: none;
-  
+
+    font-weight: bold;
 
     margin-bottom: 20px;
 
@@ -135,6 +162,8 @@ h1:hover::after{
 
     font-family: Arial, Helvetica, sans-serif;
     font-size : 1rem;
+
+    padding : 5px;
 
   margin-top: 20px;
 }

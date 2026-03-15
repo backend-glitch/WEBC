@@ -140,8 +140,11 @@ git push -u origin main
 git pull origin main
 
 
-# To untrack a file
+❌ # To untrack a file
 git rm --cached filename
+
+# to unstage a file
+git restore --staged filename
 
 # to check history
 git log --oneline

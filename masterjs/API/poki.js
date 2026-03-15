@@ -43,3 +43,39 @@ async function fetchData(){
 }
 
 fetchData();
+
+// to get random POKI
+async function getRandom(){
+
+    try{
+
+        const pokiimg  = document.getElementById("pokiimg");
+        const pokinaam = document.getElementById("pokiname");
+
+        const maxpoki = 1025;
+
+        const rand = Math.floor(Math.random() * maxpoki);
+
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${rand}`);
+
+        if(!response.ok)  alert("error : Could not fetch");
+    
+        
+
+        const data = await response.json();
+        console.log(data);
+
+        const name = data.name;
+        const pokiimgs = data.sprites.front_default;
+
+        pokiimg.src = pokiimgs;
+        pokiimg.style.display = "block";
+
+        pokinaam.value = name;
+
+    } catch(error){
+        console.log(error);
+    }
+}
+
+getRandom();
